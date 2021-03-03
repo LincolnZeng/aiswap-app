@@ -1,7 +1,7 @@
 import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, Pair } from '@bdswap/sdk'
 import { useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { BDS } from '../../constants'
+import { AIS} from '../../constants'
 import { useBlockNumber } from '../application/hooks'
 
 import { useActiveWeb3React } from '../../hooks'
@@ -120,7 +120,7 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
       : []
   }, [allStakingRewards, chainId, pairToFilterBy])
 
-  const uni = chainId ? BDS[chainId] : undefined
+  const uni = chainId ? AIS[chainId] : undefined
   const lpTokenAddr = useMemo(() => info.map(({ stakingRewardAddress }) => stakingRewardAddress), [info])
 
   const userInfoParams = useMemo(() => {
@@ -278,7 +278,7 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
 
 export function useTotalUniEarned(): TokenAmount | undefined {
   const { chainId } = useActiveWeb3React()
-  const uni = chainId ? BDS[chainId] : undefined
+  const uni = chainId ? AIS[chainId] : undefined
   const stakingInfos = useStakingInfo()
 
   return useMemo(() => {

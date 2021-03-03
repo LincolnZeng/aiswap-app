@@ -374,7 +374,7 @@ export default function Header() {
             <UNIWrapper onClick={toggleClaimModal}>
               <UNIAmount active={!!account && !availableClaim} style={{ pointerEvents: 'auto' }}>
                 <TYPE.white padding="0 2px">
-                  {claimTxn && !claimTxn?.receipt ? <Dots>Claiming BDS</Dots> : 'Claim BDS'}
+                  {claimTxn && !claimTxn?.receipt ? <Dots>Claiming AIS</Dots> : 'Claim AIS'}
                 </TYPE.white>
               </UNIAmount>
               <CardNoise />
@@ -425,7 +425,7 @@ export default function Header() {
                 
                 
               }
-                BDS
+                AIS
               </UNIAmount>
               <CardNoise />
             </UNIWrapper>

@@ -55,7 +55,7 @@ export default function CurrencyLogo({
   const srcs: string[] = useMemo(() => {
     if (currency === ETHER) return []
 
-    if (currency?.symbol === 'BDS') {
+    if (currency?.symbol === 'AIS') {
       return [require('../../assets/svg/BDSToken.svg')]
     }
 

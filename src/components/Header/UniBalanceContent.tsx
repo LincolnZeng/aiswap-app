@@ -3,7 +3,7 @@ import React, { useMemo } from 'react'
 import { X } from 'react-feather'
 import styled from 'styled-components'
 import tokenLogo from '../../assets/svg/BDSToken.svg'
-import { BDS } from '../../constants'
+import { AIS} from '../../constants'
 import { useTotalSupply, useTotalBurned } from '../../data/TotalSupply'
 import { useActiveWeb3React } from '../../hooks'
 // import { useMerkleDistributorContract } from '../../hooks/useContract'
@@ -43,7 +43,7 @@ const StyledClose = styled(X)`
  */
 export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowUniBalanceModal: any }) {
   const { account, chainId } = useActiveWeb3React()
-  const uni = chainId ? BDS[chainId] : undefined
+  const uni = chainId ? AIS[chainId] : undefined
 
   const { t } = useTranslation()
 
@@ -131,7 +131,7 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
               <TYPE.white color="white">{totalSupply?.toFixed(0, { groupSeparator: ',' })}</TYPE.white>
             </RowBetween> */}
             {uni && uni.chainId === ChainId.HECO_MAINNET ? (
-              <ExternalLink href={`https://scan.hecochain.com/token/${uni.address}`}>View BDS Token Information</ExternalLink>
+              <ExternalLink href={`https://scan.hecochain.com/token/${uni.address}`}>View AISToken Information</ExternalLink>
             ) : null}
           </AutoColumn>
         </CardSection>

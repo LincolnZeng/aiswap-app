@@ -88,7 +88,7 @@ export default function Earn() {
               </RowBetween>
               <RowBetween>
                 <TYPE.white fontSize={14}>
-                  Deposit your Liquidity Provider tokens to receive BDS, the BDSwap protocol governance token.
+                  Deposit your Liquidity Provider tokens to receive AIS, the BDSwap protocol governance token.
                 </TYPE.white>
               </RowBetween>{' '}
               <ExternalLink
@@ -96,7 +96,7 @@ export default function Earn() {
                 href="https://docs.bankdefi.finance"
                 target="_blank"
               >
-                <TYPE.white fontSize={14}>Read more about BDS</TYPE.white>
+                <TYPE.white fontSize={14}>Read more about AIS</TYPE.white>
               </ExternalLink>
              
             </AutoColumn>

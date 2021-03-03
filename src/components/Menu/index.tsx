@@ -140,7 +140,7 @@ export default function Menu() {
           </MenuItem> */}
           {/* {account && (
             <ButtonPrimary onClick={openClaimModal} padding="8px 16px" width="100%" borderRadius="12px" mt="0.5rem">
-              Claim BDS
+              Claim AIS
             </ButtonPrimary>
           )} */}
         </MenuFlyout>

@@ -13,9 +13,9 @@
       "logoURI": "https://token-icons.vercel.app/icon/BDL.png"
     },
     {
-      "name": "BDS",
+      "name": "AIS",
       "address": "0x69120197b77b51d32ffa5eafe16b3d78115640c6",
-      "symbol": "BDS",
+      "symbol": "AIS",
       "decimals": 18,
       "chainId": 128,
       "logoURI": "https://token-icons.vercel.app/icon/BDS.png"
@@ -103,8 +103,8 @@
     {
       "chainId": 256,
       "address": "0x3bb87041edf93eaea82f47f2b495e5859085e3ee",
-      "name": "BDS",
-      "symbol": "BDS",
+      "name": "AIS",
+      "symbol": "AIS",
       "decimals": 18,
       "logoURI": "https://token-icons.vercel.app/icon/wanUSDC.png"
     }

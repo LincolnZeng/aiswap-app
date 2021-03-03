@@ -15,7 +15,7 @@ import DoubleCurrencyLogo from '../DoubleLogo'
 import { Countdown } from '../../pages/Hive/Countdown'
 import useUSDCPrice from '../../utils/useUSDCPrice'
 import { useActiveWeb3React } from '../../hooks'
-import { BDS } from '../../constants'
+import { AIS} from '../../constants'
 
 const StatContainer = styled.div`
   display: flex;
@@ -93,7 +93,7 @@ export default function HiveCard({ stakingInfo, i }: { stakingInfo: StakingInfo;
   const backgroundColor = useColor(token)
 
   const { chainId } = useActiveWeb3React()
-  const uni = chainId ? BDS[chainId] : undefined
+  const uni = chainId ? AIS[chainId] : undefined
 
   const uniPrice = useUSDCPrice(uni)
 
@@ -127,7 +127,7 @@ export default function HiveCard({ stakingInfo, i }: { stakingInfo: StakingInfo;
         <RowBetween>
           <TYPE.white>{t('totalDeposited')}</TYPE.white>
           <TYPE.white>
-            {`${stakingInfo?.totalStakedAmount.toFixed(0, { groupSeparator: ',' }) ?? '-'} BDS`}
+            {`${stakingInfo?.totalStakedAmount.toFixed(0, { groupSeparator: ',' }) ?? '-'} AIS`}
           </TYPE.white>
         </RowBetween>
         <RowBetween>

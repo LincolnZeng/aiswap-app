@@ -175,7 +175,7 @@ export default function Manage({
             <TYPE.body fontSize={24} fontWeight={500}>
               {valueOfTotalStakedAmountInUSDC
                 ? `$${valueOfTotalStakedAmountInUSDC.toSignificant(6, { groupSeparator: ',' })}`
-                : `${valueOfTotalStakedAmountInWLSP?.toSignificant(6, { groupSeparator: ',' }) ?? '-'} BDS`}
+                : `${valueOfTotalStakedAmountInWLSP?.toSignificant(6, { groupSeparator: ',' }) ?? '-'} AIS`}
             </TYPE.body>
           </AutoColumn>
         </PoolData>
@@ -186,7 +186,7 @@ export default function Manage({
               {stakingInfo?.totalRewardRate
                 ?.multiply((60 * 60 * 24 * 7 / 3).toString())
                 ?.toFixed(0, { groupSeparator: ',' }) ?? '-'}
-              {' BDS / week'}
+              {' AIS/ week'}
             </TYPE.body>
           </AutoColumn>
         </PoolData>
@@ -199,11 +199,11 @@ export default function Manage({
           <CardSection>
             <AutoColumn gap="md">
               <RowBetween>
-                <TYPE.white fontWeight={600}>Step 1. Get BankDefi Farming token BDS</TYPE.white>
+                <TYPE.white fontWeight={600}>Step 1. Get BankDefi Farming token AIS</TYPE.white>
               </RowBetween>
               <RowBetween style={{ marginBottom: '1rem' }}>
                 <TYPE.white fontSize={14}>
-                  {`BDS tokens are required. Once you've got BDS in the farming pool you can stake your BDS tokens on this page.`}
+                  {`AIStokens are required. Once you've got AISin the farming pool you can stake your AIStokens on this page.`}
                 </TYPE.white>
               </RowBetween>
               <ButtonPrimary
@@ -251,14 +251,14 @@ export default function Manage({
               <CardNoise />
               <AutoColumn gap="md">
                 <RowBetween>
-                  <TYPE.white fontWeight={600}>Your BDS deposits</TYPE.white>
+                  <TYPE.white fontWeight={600}>Your AISdeposits</TYPE.white>
                 </RowBetween>
                 <RowBetween style={{ alignItems: 'baseline' }}>
                   <TYPE.white fontSize={36} fontWeight={600}>
                     {stakingInfo?.stakedAmount?.toSignificant(6) ?? '-'}
                   </TYPE.white>
                   <TYPE.white>
-                    BDS
+                    AIS
                   </TYPE.white>
                 </RowBetween>
               </AutoColumn>
@@ -270,7 +270,7 @@ export default function Manage({
             <AutoColumn gap="sm">
               <RowBetween>
                 <div>
-                  <TYPE.black>Your unclaimed BDS</TYPE.black>
+                  <TYPE.black>Your unclaimed AIS</TYPE.black>
                 </div>
                 {stakingInfo?.earnedAmount && JSBI.notEqual(BIG_INT_ZERO, stakingInfo?.earnedAmount?.raw) && (
                   <ButtonEmpty
@@ -303,7 +303,7 @@ export default function Manage({
                   {stakingInfo?.rewardRate
                     ?.multiply((60 * 60 * 24 * 7 / 3).toString())
                     ?.toFixed(0, { groupSeparator: ',' }) ?? '-'}
-                  {' BDS / week'}
+                  {' AIS/ week'}
                 </TYPE.black>
               </RowBetween>
             </AutoColumn>
@@ -313,13 +313,13 @@ export default function Manage({
           <span role="img" aria-label="wizard-icon" style={{ marginRight: '8px' }}>
             ⭐️
           </span>
-          When you withdraw, the contract will automagically claim BDS on your behalf!
+          When you withdraw, the contract will automagically claim AISon your behalf!
         </TYPE.main>
 
         {!showAddLiquidityButton && (
           <DataRow style={{ marginBottom: '1rem' }}>
             <ButtonPrimary padding="8px" borderRadius="8px" width="160px" onClick={handleDepositClick}>
-              {stakingInfo?.stakedAmount?.greaterThan(JSBI.BigInt(0)) ? 'Deposit' : 'Deposit BDS Tokens'}
+              {stakingInfo?.stakedAmount?.greaterThan(JSBI.BigInt(0)) ? 'Deposit' : 'Deposit AISTokens'}
             </ButtonPrimary>
 
             {stakingInfo?.stakedAmount?.greaterThan(JSBI.BigInt(0)) && (
@@ -337,7 +337,7 @@ export default function Manage({
           </DataRow>
         )}
         {!userLiquidityUnstaked ? null : userLiquidityUnstaked.equalTo('0') ? null : (
-          <TYPE.main>{userLiquidityUnstaked.toSignificant(6)} BDS tokens available</TYPE.main>
+          <TYPE.main>{userLiquidityUnstaked.toSignificant(6)} AIStokens available</TYPE.main>
         )}
       </PositionInfo>
     </PageWrapper>

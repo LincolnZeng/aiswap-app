@@ -45,14 +45,14 @@ export const TIMELOCK_ADDRESS = '0x1a9C8182C09F50C8318d769245beA52c32BE35BC'
 
 const UNI_ADDRESS = '0x69120197b77b51d32fFA5eAfe16b3d78115640c6'
 const UNI_ADDRESS_TESTNET = '0x3Bb87041edF93EaEA82F47F2B495E5859085E3eE'
-export const BDS: { [chainId in ChainId]: Token } = {
-  [ChainId.MAINNET]: new Token(ChainId.MAINNET, UNI_ADDRESS, 18, 'BDS', 'BDSwap'),
-  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, UNI_ADDRESS_TESTNET, 18, 'BDS', 'BDSwap'),
-  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UNI_ADDRESS_TESTNET, 18, 'BDS', 'BDSwap'),
-  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UNI_ADDRESS_TESTNET, 18, 'BDS', 'BDSwap'),
-  [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS_TESTNET, 18, 'BDS', 'BDSwap'),
-  [ChainId.HECO_MAINNET]: new Token(ChainId.HECO_MAINNET, UNI_ADDRESS, 18, 'BDS', 'BDSwap'),
-  [ChainId.HECO_TESTNET]: new Token(ChainId.HECO_TESTNET, UNI_ADDRESS, 18, 'BDS', 'BDSwap')
+export const AIS: { [chainId in ChainId]: Token } = {
+  [ChainId.MAINNET]: new Token(ChainId.MAINNET, UNI_ADDRESS, 18, 'AIS', 'BDSwap'),
+  [ChainId.RINKEBY]: new Token(ChainId.RINKEBY, UNI_ADDRESS_TESTNET, 18, 'AIS', 'BDSwap'),
+  [ChainId.ROPSTEN]: new Token(ChainId.ROPSTEN, UNI_ADDRESS_TESTNET, 18, 'AIS', 'BDSwap'),
+  [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, UNI_ADDRESS_TESTNET, 18, 'AIS', 'BDSwap'),
+  [ChainId.KOVAN]: new Token(ChainId.KOVAN, UNI_ADDRESS_TESTNET, 18, 'AIS', 'BDSwap'),
+  [ChainId.HECO_MAINNET]: new Token(ChainId.HECO_MAINNET, UNI_ADDRESS, 18, 'AIS', 'BDSwap'),
+  [ChainId.HECO_TESTNET]: new Token(ChainId.HECO_TESTNET, UNI_ADDRESS, 18, 'AIS', 'BDSwap')
 }
 
 export const COMMON_CONTRACT_NAMES: { [address: string]: string } = {
@@ -79,7 +79,7 @@ const WETH_ONLY: ChainTokenList = {
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.HECO_MAINNET]: [...WETH_ONLY[ChainId.HECO_MAINNET], HUSD, HBTC, HETH, BDS[ChainId.HECO_MAINNET], BDL]
+  [ChainId.HECO_MAINNET]: [...WETH_ONLY[ChainId.HECO_MAINNET], HUSD, HBTC, HETH, AIS[ChainId.HECO_MAINNET], BDL]
 }
 
 /**
@@ -95,13 +95,13 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.HECO_MAINNET]: [...WETH_ONLY[ChainId.HECO_MAINNET], HUSD, HBTC, HETH, BDS[ChainId.HECO_MAINNET], BDL]
+  [ChainId.HECO_MAINNET]: [...WETH_ONLY[ChainId.HECO_MAINNET], HUSD, HBTC, HETH, AIS[ChainId.HECO_MAINNET], BDL]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ...WETH_ONLY,
-  [ChainId.HECO_MAINNET]: [...WETH_ONLY[ChainId.HECO_MAINNET], HUSD, HBTC, HETH, BDS[ChainId.HECO_MAINNET], BDL]
+  [ChainId.HECO_MAINNET]: [...WETH_ONLY[ChainId.HECO_MAINNET], HUSD, HBTC, HETH, AIS[ChainId.HECO_MAINNET], BDL]
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -118,7 +118,7 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
     [WETH[ChainId.HECO_MAINNET], HETH],
     [WETH[ChainId.HECO_MAINNET], HBTC],
     [WETH[ChainId.HECO_MAINNET], HUSD],
-    [HUSD, BDS[ChainId.HECO_MAINNET]],
+    [HUSD, AIS[ChainId.HECO_MAINNET]],
     [HUSD, BDL],
   ],
   [ChainId.HECO_TESTNET]: [

@@ -49,7 +49,7 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
       await bridgeMinerContract.withdraw(stakingInfo.pid, '0x0', {gasLimit: calculateGasMargin(gas)})
         .then((response: TransactionResponse) => {
           addTransaction(response, {
-            summary: `Claim accumulated BDS rewards`
+            summary: `Claim accumulated AISrewards`
           })
           setHash(response.hash)
         })
@@ -81,7 +81,7 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
               <TYPE.body fontWeight={600} fontSize={36}>
                 {stakingInfo?.earnedAmount?.toSignificant(6)}
               </TYPE.body>
-              <TYPE.body>Unclaimed BDS</TYPE.body>
+              <TYPE.body>Unclaimed AIS</TYPE.body>
             </AutoColumn>
           )}
           <TYPE.subHeader style={{ textAlign: 'center' }}>
@@ -95,7 +95,7 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
       {attempting && !hash && (
         <LoadingView onDismiss={wrappedOnDismiss}>
           <AutoColumn gap="12px" justify={'center'}>
-            <TYPE.body fontSize={20}>Claiming {stakingInfo?.earnedAmount?.toSignificant(6)} BDS</TYPE.body>
+            <TYPE.body fontSize={20}>Claiming {stakingInfo?.earnedAmount?.toSignificant(6)} AIS</TYPE.body>
           </AutoColumn>
         </LoadingView>
       )}
@@ -103,7 +103,7 @@ export default function ClaimRewardModal({ isOpen, onDismiss, stakingInfo }: Sta
         <SubmittedView onDismiss={wrappedOnDismiss} hash={hash}>
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Transaction Submitted</TYPE.largeHeader>
-            <TYPE.body fontSize={20}>Claimed BDS!</TYPE.body>
+            <TYPE.body fontSize={20}>Claimed AIS!</TYPE.body>
           </AutoColumn>
         </SubmittedView>
       )}
